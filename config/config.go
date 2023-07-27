@@ -15,7 +15,7 @@ func Load() Config {
 
 	cfg := Config{}
 
-	cfg.HTTPPort = ":8080"
+	cfg.HTTPPort = ":3000"
 
 	cfg.PostgresHost = "locahost"
 	cfg.PostgresMaxConn = 30
