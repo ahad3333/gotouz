@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    <title>TEST</title>
+    <link rel="icon" href="logodev.png">
+</head>
+<body>
+  <div class="clock" id="clock"></div>
+    <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="stationFrom">StationFrom</label>
+            <select class="stationFrom" name="destination">
+                <option value="2900680">Andijan</option>
+                <option value="2900000">Tashkent</option>
+                <option value="2900700">Samarqand</option>
+                <option value="2900800">Bukhara</option>
+                <option value="2900720">Jizzakh</option>
+                <option value="2900790">Urganch</option>
+                <option value="2900930">Navoiy</option>
+                <option value="2900750">Qashqadaryo</option>
+                <option value="2900255">Surxondaryo</option>
+                <option value="2900172">Xiva</option>
+                <option value="2900970">Nukus</option>
+                <option value="2900850">Guluston</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stationTo">StationTo</label>
+            <select class="stationTo" name="destination1">
+                <option value="2900680">Andijan</option>
+                <option value="2900000">Tashkent</option>
+                <option value="2900700">Samarqand</option>
+                <option value="2900800">Bukhara</option>
+                <option value="2900720">Jizzakh</option>
+                <option value="2900790">Urganch</option>
+                <option value="2900930">Navoiy</option>
+                <option value="2900750">Qashqadaryo</option>
+                <option value="2900255">Surxondaryo</option>
+                <option value="2900172">Xiva</option>
+                <option value="2900970">Nukus</option>
+                <option value="2900850">Guluston</option>
+            </select>
+          </div>
+          <!-- <div class="form-group">
+            <label for="wagontype">Type of Wagon</label>
+            <select class="wagontype" name="destination">
+                <option value="Afrosiyob">Afrosiyob</option>
+                <option value="Sharq">Sharq</option>
+                <option value="Пассажирский">Пассажирский</option>
+            </select>
+          </div> -->
+          <div class="form-group">
+            <label for="types">Types</label>
+            <select class="types" name="destination">
+              <option value="xxx">NoType</option>
+                <option value="VIP">VIP</option>
+                <option value="business">Business</option>
+                <option value="econom">Economy</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="time">Time</label>
+          <input type="time" class="time1">
+        </div>
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+          </div>
+          <button id="btn" style="border-radius: 10px;font-size:20px;font-weight: 600;" type="submit">Purchase Ticket</button>
+        </form>
+      </div>
+      <div id="resultContainer" ></div>
+      <script src="./script/index.js"></script>
+
+</body>
+</html>

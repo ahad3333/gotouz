@@ -1,0 +1,294 @@
+definitions:
+  models.Direction:
+    properties:
+      depDate:
+        type: string
+      fullday:
+        type: boolean
+      type:
+        type: string
+    type: object
+  models.RequestBody:
+    properties:
+      detailNumPlaces:
+        type: integer
+      direction:
+        items:
+          $ref: '#/definitions/models.Direction'
+        type: array
+      showWithoutPlaces:
+        type: integer
+      stationFrom:
+        type: string
+      stationTo:
+        type: string
+      time:
+        items:
+          type: string
+        type: array
+      wagon:
+        $ref: '#/definitions/models.WagonType'
+    type: object
+  models.ResponseAll:
+    properties:
+      discount:
+        items: {}
+        type: array
+      express:
+        properties:
+          code: {}
+          content:
+            type: string
+          direction:
+            items:
+              properties:
+                notAllTrains: {}
+                passRoute:
+                  properties:
+                    codeFrom:
+                      type: string
+                    codeTo:
+                      type: string
+                    from:
+                      type: string
+                    to:
+                      type: string
+                  type: object
+                trains:
+                  items:
+                    properties:
+                      date:
+                        type: string
+                      train:
+                        items:
+                          properties:
+                            arrival:
+                              properties:
+                                date:
+                                  type: string
+                                localDate:
+                                  type: string
+                                localTime:
+                                  type: string
+                                stop:
+                                  type: string
+                                time:
+                                  type: string
+                              type: object
+                            brand:
+                              type: string
+                            bus: {}
+                            comments: {}
+                            departure:
+                              properties:
+                                localDate:
+                                  type: string
+                                localTime:
+                                  type: string
+                                stop: {}
+                                time:
+                                  type: string
+                              type: object
+                            departureTrain:
+                              properties:
+                                date:
+                                  type: string
+                              type: object
+                            elRegPossible:
+                              type: string
+                            firmName: {}
+                            length:
+                              type: string
+                            number:
+                              type: string
+                            number2:
+                              type: string
+                            parom: {}
+                            places:
+                              properties:
+                                cars:
+                                  items:
+                                    properties:
+                                      freeSeats:
+                                        type: string
+                                      indexType:
+                                        type: string
+                                      seats:
+                                        properties:
+                                          freeComp: {}
+                                          seatsDn: {}
+                                          seatsLateralDn: {}
+                                          seatsLateralUp: {}
+                                          seatsUndef:
+                                            type: string
+                                          seatsUp: {}
+                                        type: object
+                                      tariffs:
+                                        properties:
+                                          tariff:
+                                            items:
+                                              properties:
+                                                addFood: {}
+                                                addSigns: {}
+                                                carrier:
+                                                  properties:
+                                                    name:
+                                                      type: string
+                                                  type: object
+                                                classService:
+                                                  properties:
+                                                    content:
+                                                      type: string
+                                                    service:
+                                                      type: object
+                                                    type:
+                                                      type: string
+                                                  type: object
+                                                classServiceInt: {}
+                                                comissionFee:
+                                                  type: string
+                                                designCar: {}
+                                                elRegPossible:
+                                                  properties:
+                                                    akp: {}
+                                                    uk: {}
+                                                  type: object
+                                                modificators: {}
+                                                owner:
+                                                  properties:
+                                                    country:
+                                                      properties:
+                                                        code:
+                                                          type: string
+                                                        name:
+                                                          type: string
+                                                      type: object
+                                                    railway:
+                                                      properties:
+                                                        code:
+                                                          type: string
+                                                        name:
+                                                          type: string
+                                                      type: object
+                                                    type:
+                                                      type: string
+                                                  type: object
+                                                passVok:
+                                                  properties:
+                                                    stationFrom:
+                                                      properties:
+                                                        code:
+                                                          type: string
+                                                      type: object
+                                                    stationTo: {}
+                                                  type: object
+                                                payFood: {}
+                                                saleOnFour: {}
+                                                saleOnTwo: {}
+                                                seats:
+                                                  properties:
+                                                    freeComp: {}
+                                                    seatsDn: {}
+                                                    seatsLateralDn: {}
+                                                    seatsLateralUp: {}
+                                                    seatsUndef:
+                                                      type: string
+                                                    seatsUp: {}
+                                                  type: object
+                                                seatsSex: {}
+                                                selBedding: {}
+                                                selFood: {}
+                                                sellingInternetForbidden: {}
+                                                station: {}
+                                                swim: {}
+                                                tariff:
+                                                  type: string
+                                                tariff2: {}
+                                                tariffService: {}
+                                                ud: {}
+                                              type: object
+                                            type: array
+                                        type: object
+                                      type:
+                                        type: string
+                                      typeShow:
+                                        type: string
+                                    type: object
+                                  type: array
+                              type: object
+                            route:
+                              properties:
+                                station:
+                                  items:
+                                    type: string
+                                  type: array
+                              type: object
+                            timeInWay:
+                              type: string
+                            type:
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                  type: array
+                type:
+                  type: string
+              type: object
+            type: array
+          hasError:
+            type: boolean
+          reqAddress:
+            type: string
+          reqExpressDateTime:
+            type: string
+          reqExpressZK:
+            type: string
+          reqLocalRecv:
+            type: string
+          reqLocalSend:
+            type: string
+          showWithoutPlaces: {}
+          type:
+            type: string
+        type: object
+    type: object
+  models.WagonType:
+    properties:
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /user:
+    post:
+      consumes:
+      - application/json
+      description: Request
+      operationId: RequestBody
+      parameters:
+      - description: RequestBody
+        in: body
+        name: book
+        required: true
+        schema:
+          $ref: '#/definitions/models.RequestBody'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: GetBookBody
+          schema:
+            $ref: '#/definitions/models.ResponseAll'
+        "400":
+          description: Invalid Argumant
+          schema:
+            type: string
+        "500":
+          description: Server error
+          schema:
+            type: string
+      summary: Request
+      tags:
+      - Request
+swagger: "2.0"
